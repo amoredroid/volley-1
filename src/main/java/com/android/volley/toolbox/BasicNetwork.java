@@ -160,7 +160,7 @@ public class BasicNetwork implements Network {
                 long requestLifetime = SystemClock.elapsedRealtime() - requestStart;
                 logSlowRequests(requestLifetime, request, responseContents, statusCode);
 
-                if (statusCode < 200 || statusCode > 299) {
+                if (statusCode < 200 || statusCode > 405) {
                     throw new IOException();
                 }
                 return new NetworkResponse(
